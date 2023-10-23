@@ -19,23 +19,48 @@ class Person{
         this.age = age;
         this.hairColor = hairColor;
     }
-        
 }
-
-// class Governor extends Person {
-//     constructor(name, age, hairColor, state) {
-//         super(name, age, hairColor)
-//         this.state = state;
-//     }
-
-//     static hairColors() {
-//         return ["green", "pink", "grey"];
-//     }
-// }
 
 class PostalWorker extends Person {
-    constructor(name, age, hairColor, longHours) {
-       super (name, age, hairColor)
-       this.longHours = longHours
+    constructor(name, age, hairColor) {
+       super (name, age, hairColor);
+    }
+    seePerson() {
+        console.log('Good morning!');
+    }
+    seeDog() {
+        console.log('Aaahh!');
     }
 }
+
+class Chef extends Person {
+    constructor(name, age, hairColor) {
+        super (name, age, hairColor);
+    }
+    wearHat() {
+        this.hairColor = 'not visible!'
+    }
+    cleanWorkstation() {
+        console.log('Green then red!');
+    }
+}
+
+const Abe = new PostalWorker('Abe', 55, 'brown');
+const Pam = new PostalWorker('Pam', 36, 'green');
+
+const Remy = new Chef('Remy', 27, 'brown');
+const Giselle = new Chef('Giselle', 30, 'blue');
+
+console.log(Abe);
+console.log(Pam);
+console.log(Remy);
+console.log(Giselle);
+
+Abe.seePerson();
+Abe.seeDog();
+Pam.seePerson();
+Pam.seeDog();
+Remy.wearHat();
+Remy.cleanWorkstation();
+Giselle.wearHat();
+Giselle.cleanWorkstation();
